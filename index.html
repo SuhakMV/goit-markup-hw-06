@@ -78,6 +78,36 @@
               <use href="./images/sprite.svg#icon-close-modal"></use>
             </svg>
           </button>
+          <form class="modal-form">
+            <p class="modal-title">Оставьте свои данные, мы вам перзвоним</p>
+            <label class="modal-label" for="user_name">Имя
+              <input class="modal-input" type="text" name="username"/>
+              <svg class="modal-icon" width="18px" height="18px">
+                <use href="./images/icons.svg#icon-name"></use>
+              </svg>
+            </label>
+            <label class="modal-label" for="user_email">Телефон
+              <input class="modal-input" class="modale-input" type="tel" name="phone_number"/>
+              <svg class="modal-icon" width="18px" height="18px">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </label>
+            <label class="modal-label" for="user_email">Почта
+              <input class="modal-input" type="email" name="email"/>
+              <svg class="modal-icon" width="18px" height="18px">
+                <use href="./images/icons.svg#icon-mail"></use>
+              </svg>
+            </label>
+            <label class="modal-label">Комментарий
+            <textarea class="modal-input comments" name="comments" rows="6" placeholder="Введите текст"></textarea>
+            </label>
+            <label class="checkbox-label">
+              <input class="checkbox-input" type="checkbox"/>
+              <span class="checkbox-title">Соглашаюсь с рассылкой и принимаю 
+                <a href="./" class="checkbox-link">Условия договора</a></span>
+            </label>
+            <button button type="submit" class="modal-submit">Отправить</button>
+          </form>
         </div>
       </div>
 
@@ -434,6 +464,20 @@
             </li>
           </ul>
         </div>
+        <!-- Form -->
+
+        <form class="subscrible-form">
+          <label class="subscrible-label">
+            <span class="subscrible-title">подпишитесь на рассылку</span>
+            <input class="subscrible-input" type="email" name="email" placeholder="E-mail"/>
+          </label>
+          <button type="submit" class="subscrible-btn">Подписаться
+            <svg class="subscrible-btn-icon" width="24px" height="24px">
+              <use href="./images/icons.svg#icon-send"></use>
+            </svg>
+          </button>
+        </form>
+        
       </div>
     </footer>
     <script src="./js/modal.js"></script>
