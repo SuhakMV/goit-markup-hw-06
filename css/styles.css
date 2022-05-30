@@ -3,6 +3,8 @@
     --primary-text-color: #757575;
     --primary-title-color: #212121;
     --icon-color: #AFB1B8;
+    --primary-button-color: #2196F3;
+    --accent-color: #188CE8;
     --primary-transition-durat: 250ms;
     --primary-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
 
@@ -56,10 +58,9 @@ img {
     font-size: 26px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: #2196F3;
+    color: var(--primary-button-color);
     padding-top: 24px;
     padding-bottom: 24px;
-
     transition-property: text-decoration-color, color;
     transition-duration: var(--primary-transition-durat);
     transition-timing-function: var(--primary-transition-timing-function);}
@@ -80,13 +81,12 @@ img {
     letter-spacing: 0.02em;
     color: var(--primary-title-color);
     display: block;
-
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: var(--primary-transition-timing-function);}
 
 /*Links color*/
-.link-color {color: #2196F3;}
+.link-color {color: var(--primary-button-color);}
 
 .link-color::after {
     position:absolute;
@@ -96,7 +96,7 @@ img {
     width: 100%;
     height: 4px;
     border-radius: 2px;
-    background: #2196F3;}
+    background: var(--primary-button-color);}
 
 .mail,
 .phone
@@ -126,8 +126,8 @@ img {
 .logo-first:focus,
 .link:hover, 
 .link:focus
-    {text-decoration-color: #188CE8;
-    color: #188CE8;}
+    {text-decoration-color: var(--accent-color);
+    color: var(--accent-color);}
 
 .contact-item> .mail,
 .contact-item> .phone{
@@ -177,7 +177,7 @@ img {
     letter-spacing: 0.06em;
     border: none;
     border-radius: 4px;
-    background-color: #2196F3;
+    background-color: var(--primary-button-color);
     color: #FFFFFF;
     cursor: pointer;
     padding: 10px 32px;
@@ -187,7 +187,7 @@ img {
     transition-timing-function: var(--primary-transition-timing-function);}
 
 .btn-order:hover,
-.btn-order:focus {color:#188CE8;
+.btn-order:focus {color:var(--accent-color);
     background-color:#FFFFFF;}
 
 /*Modal window*/
@@ -244,10 +244,9 @@ img {
 .button-close:hover,
 .button-close:focus {
     color: #FFFFFF;
-    background-color: #2196F3;}
+    background-color: var(--primary-button-color);}
 
 /*Modal-Form*/
-
 .modal-form {
     width: 100%;
     display: block;
@@ -300,18 +299,18 @@ img {
 
 .modal-label:focus-within .modal-input {
     outline: 0;
-    border-color: #2196F3;}
+    border-color: var(--primary-button-color);}
 
 .modal-label:focus-within .modal-icon {
-    color: #2196F3;}
+    color: var(--primary-button-color);}
 
 .modal-input:hover,
 .modal-input:focus {
-    border-color:  #2196F3;}
+    border-color:  var(--primary-button-color);}
 
 .modal-label:hover .modal-icon,
 .modal-label:focus .modal-icon {
-    color: #2196F3;}
+    color: var(--primary-button-color);}
 
 .modal-icon {
     fill: currentColor;
@@ -327,12 +326,48 @@ img {
     align-items: center;
     margin-bottom: 30px;}
 
-.checkbox-input {
+.checkbox-container {
+    position: relative;
     width: 16px;
     height: 15px;
-    background: #2196F3;
+    margin-right: 7px;
+    border: 2px solid #212121;
     border-radius: 2px;
-    margin-right: 7px;}
+    cursor: pointer;
+    transition-property: border-color;
+    transition-duration: var(--primary-transition-durat);
+    transition-timing-function: var(--primary-transition-timing-function);}
+
+.checkbox-input {
+    visibility: hidden;
+    width: 16px;
+    height: 15px;}    
+
+.checkbox-icon {
+    fill: currentColor;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-color: var(--primary-button-color);
+    color: #FFFFFF;
+    border-radius: 2px;
+    width: 16px;
+    height: 15px;
+    transform: scale(0.2);
+    opacity: 0;
+    transition: transform var(--primary-transition-durat) var(--primary-transition-timing-function),
+    opacity var(--primary-transition-durat) var(--primary-transition-timing-function);}
+
+.checkbox-container:hover,
+.checkbox-container:focus {
+    border-color: var(--primary-button-color);}
+
+.checkbox-input:checked + .checkbox-icon {
+    opacity: 1;
+    transform: scale(1);}
+
+.checkbox-input:checked + .checkbox-container {
+    border: none;}
 
 .checkbox-title {
     font-weight: 400;
@@ -342,7 +377,7 @@ img {
     color: var(--primary-text-color);}
 
 .checkbox-link {
-    color: #2196F3;}
+    color: var(--primary-button-color);}
 
 .modal-submit {
     display: flex;
@@ -353,14 +388,18 @@ img {
     cursor: pointer;
     color: #FFFFFF;
     padding: 10px 55px;
-    background: #188CE8;
+    background: var(--primary-button-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     border: none;
     margin: 0 auto;
-}
+    transition-property: background-color;
+    transition-duration: var(--primary-transition-durat);
+    transition-timing-function: var(--primary-transition-timing-function);}
 
-
+.modal-submit:hover,
+.modal-submit:focus {
+    background: var(--accent-color);}
 
 /*Features section*/
 .section {
@@ -445,21 +484,21 @@ img {
     z-index: -1;}
 
 .work-text {
-position: absolute;
-display: flex;
-align-items: center;
-justify-content: center;
-bottom: 0;
-width: 100%;
-height: 70px;
-font-weight: 700;
-font-size: 14px;
-line-height: 1.14;
-text-transform: uppercase;
-color: #FFFFFF;
-background-image: linear-gradient(to right, 
-        rgba(47, 48, 58, 0.8),
-         rgba(47, 48, 58, 0.8));}
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-image: linear-gradient(to right, 
+            rgba(47, 48, 58, 0.8),
+            rgba(47, 48, 58, 0.8));}
 
 /*Team section*/
 .team {background-color: #F5F4FA;}
@@ -522,7 +561,7 @@ background-image: linear-gradient(to right,
 
 .social-link:hover,
 .social-link:focus {
-    background-color: #2196F3;
+    background-color: var(--primary-button-color);
     color: #FFFFFF;}
 
 /*Clients section*/
@@ -558,8 +597,8 @@ background-image: linear-gradient(to right,
 
 .clients-link:hover,
 .clients-link:focus{
-    color:#2196F3;
-    border: 1px solid #2196F3;}
+    color:var(--primary-button-color);
+    border: 1px solid var(--primary-button-color);}
 
 /*Footer section*/
 .page-footer {
@@ -607,7 +646,7 @@ background-image: linear-gradient(to right,
 .footer-list .mail:hover,
 .footer-list .phone:focus,
 .footer-list .phone:hover {
-    color: #2196F3;}
+    color: var(--primary-button-color);}
 
 .join {margin-right: 93px;}
 
@@ -646,7 +685,7 @@ background-image: linear-gradient(to right,
 
 .join-link:hover,
 .join-link:focus {
-    background-color: #2196F3;}
+    background-color: var(--primary-button-color);}
 
 /*Footer subscrible Form*/    
 .subscrible-form {
@@ -688,7 +727,7 @@ background-image: linear-gradient(to right,
     color: #FFFFFF;
     padding: 10px 29px;
 
-    background: #2196F3;
+    background: var(--primary-button-color);
     border-radius: 4px;
     border: none;
 
@@ -696,24 +735,20 @@ background-image: linear-gradient(to right,
     transition-duration: var(--primary-transition-durat);
     transition-timing-function: var(--primary-transition-timing-function);}
 
-
 .subscrible-btn-icon {
     fill: currentColor;
     margin-left: 10px;}
 
 .subscrible-btn:hover,
-.subscrible-btn:focus {color:#188CE8;
+.subscrible-btn:focus {color: var(--accent-color);
     background-color:#FFFFFF;}
-
-
-
 
 /*Portfolio Page*/
 /*Header*/
 .studio-portfolio {
     color: var(--primary-title-color);}
 
-.portfolio {color: #2196F3;}
+.portfolio {color: var(--primary-button-color);}
 
 .mail-portfolio {color: var(--primary-text-color);}
 
@@ -749,15 +784,15 @@ background-image: linear-gradient(to right,
 
     transition-property: background-color, color, box-shadow;
     transition-duration: var(--primary-transition-durat);
-    transition-timing-function: var(--primary-transition-durat);}
+    transition-timing-function: var(--primary-transition-timing-function);}
 
 .first-btn {
-    background-color: #2196F3;
+    background-color: var(--primary-button-color);
     color: #FFFFFF;}
 
 .btn:hover,
 .btn:focus {
-    background-color: #188CE8;
+    background-color: var(--accent-color);
     color:#FFFFFF;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);}
 
@@ -831,13 +866,3 @@ background-image: linear-gradient(to right,
     line-height: 1.88;
     letter-spacing: 0.03em;
     color: var(--primary-text-color);}
-
-
-
-
-
-
-
-
-
-

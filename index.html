@@ -67,7 +67,9 @@
             эффективные решения <br />
             для вашего бизнеса
           </h1>
-          <button data-modal-open type="button" class="btn-order">Заказать услугу</button>
+          <button data-modal-open type="button" class="btn-order">
+            Заказать услугу
+          </button>
         </div>
       </section>
       <!-- Modal window -->
@@ -80,37 +82,52 @@
           </button>
           <form class="modal-form">
             <p class="modal-title">Оставьте свои данные, мы вам перзвоним</p>
-            <label class="modal-label" for="user_name">Имя
-              <input class="modal-input" type="text" name="username"/>
+            <label class="modal-label" for="user_name"
+              >Имя
+              <input class="modal-input" type="text" name="username" id="user_name"/>
               <svg class="modal-icon" width="18px" height="18px">
                 <use href="./images/icons.svg#icon-name"></use>
               </svg>
             </label>
-            <label class="modal-label" for="user_email">Телефон
-              <input class="modal-input" class="modale-input" type="tel" name="phone_number"/>
+            <label class="modal-label" for="user_phone">Телефон
+              <input
+                class="modal-input"
+                type="tel"
+                name="phone_number"
+                id="user_phone"
+              />
               <svg class="modal-icon" width="18px" height="18px">
                 <use href="./images/icons.svg#icon-phone"></use>
               </svg>
             </label>
-            <label class="modal-label" for="user_email">Почта
-              <input class="modal-input" type="email" name="email"/>
+            <label class="modal-label" for="user_email"
+              >Почта
+              <input class="modal-input" type="email" name="email" id="user_email"/>
               <svg class="modal-icon" width="18px" height="18px">
                 <use href="./images/icons.svg#icon-mail"></use>
               </svg>
             </label>
             <label class="modal-label">Комментарий
-            <textarea class="modal-input comments" name="comments" rows="6" placeholder="Введите текст"></textarea>
+              <textarea
+                class="modal-input comments"
+                name="comments"
+                rows="6"
+                placeholder="Введите текст"
+              ></textarea>
             </label>
             <label class="checkbox-label">
-              <input class="checkbox-input" type="checkbox"/>
-              <span class="checkbox-title">Соглашаюсь с рассылкой и принимаю 
+              <span class="checkbox-container">
+                <input class="checkbox-input" type="checkbox"/>
+                <svg class="checkbox-icon" width="16px" height="15px">
+                  <use href="./images/icons.svg#icon-checkbox"></use></svg>
+                </span>
+              <span class="checkbox-title">Соглашаюсь с рассылкой и принимаю
                 <a href="./" class="checkbox-link">Условия договора</a></span>
             </label>
-            <button button type="submit" class="modal-submit">Отправить</button>
+            <button type="submit" class="modal-submit">Отправить</button>
           </form>
         </div>
       </div>
-
 
       <!-- Features section -->
       <section class="section">
@@ -175,25 +192,30 @@
           <ul class="work-list">
             <li class="work-item">
               <div class="work-thumb">
-              <img src="./images/photo_1.png" alt="desk-office" width="370" />
+                <img src="./images/photo_1.png" alt="desk-office" width="370" />
                 <p class="work-text">десктопные приложения</p>
               </div>
             </li>
             <li class="work-item">
               <div class="work-thumb">
-              <img src="./images/photo_2.png" alt="mobile phones" width="370" />
+                <img
+                  src="./images/photo_2.png"
+                  alt="mobile phones"
+                  width="370"
+                />
                 <p class="work-text">мобильные приложения</p>
               </div>
             </li>
             <li class="work-item">
               <div class="work-thumb">
-              <img
-                src="./images/photo_3.png"
-                alt="graphic-tablet"
-                width="370"/>
+                <img
+                  src="./images/photo_3.png"
+                  alt="graphic-tablet"
+                  width="370"
+                />
 
-                  <p class="work-text">дизайнерские решения</p>
-                </div>
+                <p class="work-text">дизайнерские решения</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -469,15 +491,20 @@
         <form class="subscrible-form">
           <label class="subscrible-label">
             <span class="subscrible-title">подпишитесь на рассылку</span>
-            <input class="subscrible-input" type="email" name="email" placeholder="E-mail"/>
+            <input
+              class="subscrible-input"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+            />
           </label>
-          <button type="submit" class="subscrible-btn">Подписаться
+          <button type="submit" class="subscrible-btn">
+            Подписаться
             <svg class="subscrible-btn-icon" width="24px" height="24px">
               <use href="./images/icons.svg#icon-send"></use>
             </svg>
           </button>
         </form>
-        
       </div>
     </footer>
     <script src="./js/modal.js"></script>
